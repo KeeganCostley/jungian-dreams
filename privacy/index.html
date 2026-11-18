@@ -10,13 +10,13 @@
 <main>
 <div class="eyebrow">Jungian Dream Interpretation</div>
 <h1>Privacy <em>policy</em></h1>
-<p class="updated">Last updated: 12 November 2026</p>
+<p class="updated">Last updated: 18 November 2026</p>
 
 <p>Jungian Dream Interpretation ("the app") is made by Keegan Costley, an individual developer in Australia. This policy explains what the app collects, why, who it's shared with, and how to delete it.</p>
 
 <h2>What the app collects</h2>
 <ul>
-<li><strong>Your dreams.</strong> Voice recordings you make, the text transcribed from them, and anything you type (for example, context you add to a dream).</li>
+<li><strong>Your dreams.</strong> Voice recordings you make (kept only until they're transcribed), the text transcribed from them, and anything you type (for example, context you add to a dream).</li>
 <li><strong>Interpretations.</strong> The readings, questions and rituals generated from your dreams, and any replies you write to dream figures.</li>
 <li><strong>Settings.</strong> Your chosen reading length and analyst style.</li>
 <li><strong>Account identifiers.</strong> A random account ID created when you first open the app. If you choose Sign in with Apple, your Apple ID's identifier and the email Apple shares (which may be a private relay address).</li>
@@ -35,7 +35,7 @@
 <tr><th>Service</th><th>What it receives</th><th>Why</th></tr>
 <tr><td><strong>OpenAI</strong></td><td>Your voice recordings; interpretation text if you use narration</td><td>Speech-to-text and text-to-speech</td></tr>
 <tr><td><strong>Anthropic (Claude)</strong></td><td>Your dream text and related context</td><td>Writing interpretations</td></tr>
-<tr><td><strong>Supabase</strong></td><td>Everything listed above</td><td>Database, file storage and accounts</td></tr>
+<tr><td><strong>Supabase</strong></td><td>Your journal (encrypted, unreadable to them), account, settings and purchase records</td><td>Database, file storage and accounts</td></tr>
 <tr><td><strong>RevenueCat</strong></td><td>Your account ID and purchase records</td><td>Processing in-app purchases</td></tr>
 <tr><td><strong>Apple</strong></td><td>Purchases; your Apple ID if you use Sign in with Apple</td><td>Payments and sign-in</td></tr>
 </table>
@@ -43,7 +43,10 @@
 <p>OpenAI and Anthropic process your data to return a result and, under their API terms, do not use it to train their models. They may keep it for a limited period for abuse monitoring.</p>
 
 <h2>Storage and security</h2>
-<p>Data is stored with Supabase. Your dreams and readings are private to your account: database rules prevent other users from accessing them, and the AI service keys are held on the server, never in the app.</p>
+<p>Your dreams are encrypted on your phone before they're saved. The transcript, summary, symbols, notes, dialogues, every interpretation and the running notes the app keeps across your dreams are stored only as ciphertext. The key stays on your devices (in your iPhone's Keychain, synced through iCloud Keychain if you use it) and is never sent to the server, so the developer, Supabase and anyone with access to the database can't read them. Only the date, length and flags such as starred or lucid are stored unencrypted, so the journal can be sorted.</p>
+<p>Voice recordings are encrypted before upload and deleted as soon as they've been transcribed.</p>
+<p>To interpret a dream, its text has to be sent to the AI services above. It travels to them encrypted in transit (HTTPS) and is readable by them while they process it.</p>
+<p>Settings has an optional 12-word recovery key. If you lose your phone and don't use iCloud Keychain, the recovery key is the only way to unlock your journal; without either, it can't be recovered, by anyone. AI service keys are held on the server, never in the app.</p>
 
 <h2>Deleting your data</h2>
 <p>In the app, go to <strong>Settings → Delete all my data</strong>. This permanently deletes your recordings, dreams, interpretations, token balance and account. It cannot be undone, and purchased tokens are not refunded on deletion. If you can't access the app, email the address below to request deletion.</p>
